@@ -1,2 +1,29 @@
+
+<% provide(:titulo, "Contacto") %>
+
 <h1>Estaticas#contacto</h1>
 <p>Find me in app/views/estaticas/contacto.html.erb</p>
+
+<% #obtener los parámetros desde el link (desde la pag de nosotros)%>
+
+<% #el primer ejemplo lo hacemos desde el mismo arichivo de contacto %>
+
+<p>ID: <%= params['id'] %></p>
+<p>Pág: <%= params[:pagina] %></p>
+
+
+<br>
+
+<% #el siguiente ejemplo lo hacemos mediante variables instanciadas desde el controlador "contacto". Es la forma más recomendada de trabajar.  %>
+
+<p>ID: <%= @id %></p>
+<p>Pág: <%= @pag %></p>
+
+
+
+
+
+
+
+
+

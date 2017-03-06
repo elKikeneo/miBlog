@@ -1,2 +1,59 @@
+
+<% provide(:titulo, "Nosotros") %>
+
 <h1>Estaticas#nosotros</h1>
 <p>Find me in app/views/estaticas/nosotros.html.erb</p>
+
+
+<% if false %>
+	
+
+	<% 1+1 %>
+	<%= 1+1 %>
+
+	<% #comentario %>
+
+	<% 5.times do |x| %>
+		<%= x %>
+	<% end -%>
+
+<% end -%>
+
+
+<%= @mensaje %>
+<br>
+<%= "El controller dice: #{@mensaje}" %>
+
+<ul>
+	<% @usuarios.each do |i| %>
+		<%= "<li>#{i}</i>".html_safe %>
+	<% end -%>
+</ul>
+
+<%= link_to 'home', root_path %>
+<%= link_to 'contacto', estaticas_contacto_path %>
+
+<br>
+
+<%= link_to 'Contacto',
+			{:controller=>'estaticas',
+			:action=>'contacto',
+			:id=>3,
+			:pagina=>2
+			},
+			:class=>'my-class',
+			:target=>'_blank' %>
+
+<%= link_to 'Contacto',
+			:controller=>'estaticas',
+			:action=>'contacto',
+			:id=>3,
+			:pagina=>2 %>
+
+
+
+
+
+
+
+
