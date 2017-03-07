@@ -8,9 +8,19 @@
   </head>
 
   <body>
-	
-	<%= render 'shared/header' %>
-    <%= yield %>
+
+	  <%= render 'shared/header' %>
+
+    <ul>
+      <% flash.each do |key,value| %>
+        <li><%= value %></li>
+      <% end -%>
+    </ul> 
+
+    <div class="container">
+      <%= yield %>  
+    </div>
+    
 
   </body>
 </html>
