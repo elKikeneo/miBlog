@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306141525) do
+ActiveRecord::Schema.define(version: 20170307132410) do
 
   create_table "articulos", force: :cascade do |t|
     t.string   "titulo"
     t.text     "contenido"
     t.integer  "autor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "categoria_id"
     t.index ["autor_id"], name: "index_articulos_on_autor_id"
+    t.index ["categoria_id"], name: "index_articulos_on_categoria_id"
+  end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.text     "nombre"
+    t.string   "texto"
+    t.integer  "articulo_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["articulo_id"], name: "index_comentarios_on_articulo_id"
   end
 
 end
